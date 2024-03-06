@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    
     <title>Login Page</title>
     <style>
         body {
@@ -62,6 +62,8 @@
             background-color: #45a049;
         }
     </style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script type="text/javascript" src="digpsw.js"></script>
 </head>
 <body>
     <div class="login-container">
@@ -72,7 +74,8 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-        <button type="button" class="login-button" onclick="PresetProfile('password')">Login</button>
+             <button type="button" class="login-button" onclick="digpsw(password.value)">Login</button>
+        <!-- <button type="button" class="login-button" onclick="window.location.href='pag1.html'">Login</button> -->
             </form>
         </div>
     </div>
@@ -82,15 +85,6 @@
             // Aggiungi la logica di autenticazione qui
             alert("Questa è solo una pagina di esempio. Aggiungi la logica di autenticazione nel tuo progetto!");
         }
-        
-        function PresetProfile(psw){
-	if(psw=="giulio"){
-		window.location.href='pag1.html';
-	}
-	else{
-		alert('Password errata deficiente');
-	}
-}
     </script>
 </body>
 </html>
